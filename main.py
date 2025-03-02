@@ -12,7 +12,7 @@ while flag:
     for event in pg.event.get():
         if event.type == pg.QUIT:
             flag = False
-    button1 = Buttons("text",screen, 50, 50, 100, 50)
+    button1 = Buttons("a",screen, x_pos=400, y_pos=300)
     if button1.check_click():
         flag = False
 
