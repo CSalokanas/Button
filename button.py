@@ -13,15 +13,19 @@ class Buttons:
             "Position_X": x_pos,
             "Position_Y": y_pos,
             "Font": font,
-            "screen": screen
+            "Screen": screen
         }
         self.font = pygame.font.Font(font, text_size)
         self.text = self.font.render(text, True, text_color)
 
     def draw(self):
         button_rect = pygame.rect.Rect(self.button_map["Position_X"], self.button_map["Position_Y"], self.button_map["Size_X"], self.button_map["Size_Y"])
-        pygame.draw.rect(surface=self.button_map["screen"], color=self.button_map["Color"], rect=button_rect)
-        self.button_map["screen"].blit(self.text, (self.button_map["Position_X"] + 10, self.button_map["Position_Y"] + 10))
+        pygame.draw.rect(surface=self.button_map["Screen"], color=self.button_map["Color"], rect=button_rect)
+        self.button_map["Screen"].blit(self.text, (self.button_map["Position_X"] + 10, self.button_map["Position_Y"] + 10))
+        pygame.draw.line(surface=self.button_map["Screen"], color="red", start_pos=(self.button_map["Position_X"], self.button_map["Position_Y"]), end_pos=(self.button_map["Position_X"] + self.button_map["Size_X"], self.button_map["Position_Y"]), width=2)
+        pygame.draw.line(surface=self.button_map["Screen"], color="red", start_pos=(self.button_map["Position_X"], self.button_map["Position_Y"]), end_pos=(self.button_map["Position_X"], self.button_map["Position_Y"] + self.button_map["Size_Y"]), width=2)
+        pygame.draw.line(surface=self.button_map["Screen"], color="red",start_pos=(self.button_map["Position_X"], self.button_map["Position_Y"]+self.button_map["Size_Y"]), end_pos=(self.button_map["Position_X"] + self.button_map["Size_X"], self.button_map["Position_Y"]+self.button_map["Size_Y"]), width=2)
+        pygame.draw.line(surface=self.button_map["Screen"], color="red",start_pos=(self.button_map["Position_X"] + self.button_map["Size_X"], self.button_map["Position_Y"]), end_pos=(self.button_map["Position_X"] + self.button_map["Size_X"], self.button_map["Position_Y"] + self.button_map["Size_Y"]), width=2)
 
     def check_click(self):
         mouse_pos = pygame.mouse.get_pos()
