@@ -1,3 +1,5 @@
+"view it in code, much better"
+
 **Required:**
 text: text being the text displayed on the button.
 screen: screen being the surface the button will be displayed on.
