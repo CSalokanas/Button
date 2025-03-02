@@ -18,3 +18,5 @@ aliases = True
 borders = False| If you want borders on the button give it a value of True
 Border_color = "red"| what color you want the button borders to be 
 Line_thickness = 2| Border thickness
+
+if the text on the button goes beyond the text box just add \n in the text, i was 2 lazy to fix it sry :p
