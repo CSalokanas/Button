@@ -25,7 +25,6 @@ class Buttons:
     def draw(self):
         button_rect = pygame.rect.Rect(self.button_map["Position_X"], self.button_map["Position_Y"], self.button_map["Size_X"], self.button_map["Size_Y"])
         pygame.draw.rect(surface=self.button_map["Screen"], color=self.button_map["Color"], rect=button_rect)
-        self.button_map["Screen"].blit(self.text, (self.button_map["Position_X"] + 10, self.button_map["Position_Y"] + 10))
         if self.button_map["Borders"]:
             pygame.draw.line(surface=self.button_map["Screen"], color=self.button_map["Border_Color"], start_pos=(self.button_map["Position_X"], self.button_map["Position_Y"]), end_pos=(self.button_map["Position_X"] + self.button_map["Size_X"], self.button_map["Position_Y"]), width=self.button_map["Line_Thickness"])
             pygame.draw.line(surface=self.button_map["Screen"], color=self.button_map["Border_Color"], start_pos=(self.button_map["Position_X"], self.button_map["Position_Y"]), end_pos=(self.button_map["Position_X"], self.button_map["Position_Y"] + self.button_map["Size_Y"]), width=self.button_map["Line_Thickness"])
@@ -34,12 +33,12 @@ class Buttons:
         if self.button_map["Text_Shadow"]:
 
             self.button_map["Screen"].blit(self.shadow_text,
-                                           (self.button_map["Position_X"] + 12, self.button_map["Position_Y"] + 12))
+                                           (self.button_map["Position_X"] + self.button_map["Size_X"]/2 +2, self.button_map["Position_Y"] + 12))
             self.button_map["Screen"].blit(self.text,
-                                           (self.button_map["Position_X"] + 10, self.button_map["Position_Y"] + 10))
+                                           (self.button_map["Position_X"] + self.button_map["Size_X"]/2, self.button_map["Position_Y"] + 10))
         else:
             self.button_map["Screen"].blit(self.text,
-                                           (self.button_map["Position_X"] + 10, self.button_map["Position_Y"] + 10))
+                                           (self.button_map["Position_X"] + self.button_map["Size_X"]/2, self.button_map["Position_Y"] + 10))
     def check_click(self):
         mouse_pos = pygame.mouse.get_pos()
         if pygame.mouse.get_just_pressed()[0]:
@@ -49,3 +48,6 @@ class Buttons:
         return False
     def text_shadow(self):
         self.text = self.font.render(self.button_map["Text"], self.button_map["aliases"], "black")
+
+    def box_shadow(self):
+        pass
