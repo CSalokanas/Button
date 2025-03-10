@@ -1,5 +1,5 @@
 "view it in code, much better"
-
+You will need to install pygame as well as pygame-ce to use this
 **Required:**
 text: text being the text displayed on the button.
 screen: screen being the surface the button will be displayed on.
