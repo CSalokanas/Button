@@ -2,10 +2,14 @@ Needed libraries:
 
 -pygame-ce
 
+================================================================
+
 **Required:**
 -text: text being the information displayed on the button.
 
 -screen: screen being the surface the button will be displayed on.
+
+================================================================
 
 **Optional:** (all the optional features have a pre-set (portrayed after the "=") value that if not change will not be changed.
 
