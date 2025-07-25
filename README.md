@@ -11,7 +11,7 @@ Needed libraries:
 
 ================================================================
 
-**Optional:** (all the optional features have a pre-set (portrayed after the "=") value that if not change will not be changed.
+**Optional:** (all the optional features have a pre-set (portrayed after the "=") value.
 
 ~size_x = 150| size_x is the size of the button in relation to the x-axis (horizontal)
 
